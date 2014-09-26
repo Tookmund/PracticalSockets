@@ -1,0 +1,45 @@
+# Makefile for Practical Socket static and dynamically-linked libraries on Linux
+# Copyright (C) 2014 Jacob Adams
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#
+# Based on tutorials 
+# http://www.adp-gmbh.ch/cpp/gcc/create_lib.html 
+# and
+# http://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html
+
+FILE = PracticalSocket
+CPP = g++
+FLAGS = -Wall -Werror -fpic -c
+INSTALL = /usr/local/lib/
+
+compile: lib$(FILE).a lib$(FILE).so
+
+$(FILE).o: $(FILE).cpp $(FILE).h
+	$(CPP) $(FLAGS) $(FILE).cpp -o $(FILE).o
+	
+lib$(FILE).a: $(FILE).o
+	ar rcs lib$(FILE).a $(FILE).o
+	
+lib$(FILE).so: $(FILE).o
+	$(CPP) -shared $(FILE).o -o lib$(FILE).so
+	
+install: lib$(FILE).a lib$(FILE).so
+	cp lib$(FILE).a lib$(FILE).so $(INSTALL)
+	
+clean:
+	rm -rf lib$(FILE).a lib$(FILE).so
+	
+uninstall: clean
+	rm $(INSTALL)lib$(FILE).a lib$(FILE).so
