@@ -21,7 +21,8 @@
 
 FILE = PracticalSocket
 CPP = g++
-FLAGS = -Wall -Werror -fpic -c
+FLAGS = -fpic -c
+DEBUG = -Wall -Werror
 INSTALL = /usr/local/lib/
 
 compile: lib$(FILE).a lib$(FILE).so
