@@ -39,7 +39,7 @@ install: lib$(FILE).a lib$(FILE).so
 	cp lib$(FILE).a lib$(FILE).so $(INSTALL)
 	
 clean:
-	rm -rf lib$(FILE).a lib$(FILE).so
+	rm -rf lib$(FILE).a lib$(FILE).so $(FILE).o
 	
 uninstall: clean
-	rm $(INSTALL)lib$(FILE).a lib$(FILE).so
+	rm $(INSTALL)lib$(FILE).a $(INSTALL)lib$(FILE).so
