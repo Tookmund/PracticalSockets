@@ -17,7 +17,7 @@
  *   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
-#include "PracticalSocket.h"  // For Socket, ServerSocket, and SocketException
+#include <PracticalSocket>  // For Socket, ServerSocket, and SocketException
 #include <iostream>           // For cout, cerr
 #include <cstdlib>            // For atoi()  
 #include <pthread.h>          // For POSIX threads  
