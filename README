@@ -3,19 +3,22 @@ Practical Sockets
 
 The Practical Sockets Library 
 
-From http://cs.ecs.baylor.edu/~donahoo/practical/CSockets/practical/ <br />
+From http://cs.ecs.baylor.edu/~donahoo/practical/CSockets/practical/
 Originally by Michael J. Donahoo and Kenneth L. Calvert
 
 To install just type:
-    ./configure
-    make
-    make install
+
+./configure
+make
+make install
 
 If you get a warning like this:    
  
-    WARNING: 'aclocal-1.14' is missing on your system.
+WARNING: 'aclocal-1.14' is missing on your system.
 
-Then you will need to install automake autoconf and libtool and run:
-    autoreconf
+Then you will need to install automake, autoconf, and libtool and run:
+
+autoreconf
+
 Not sure how to fix this, affects at least Debian wheezy 
  
