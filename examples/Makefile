@@ -58,3 +58,16 @@ MulticastReceiver: MulticastReceiver.cpp
 clean:
 	$(RM) TCPEchoClient TCPEchoServer UDPEchoClient UDPEchoServer TCPEchoServer-Thread \
         BroadcastSender BroadcastReceiver MulticastSender MulticastReceiver
+test: all
+	./TCPEchoServer 8888 &
+	./TCPEchoClient localhost test 8888
+	killall TCPEchoServer
+	./UDPEchoServer 8888 &
+	./UDPEchoClient localhost test 8888
+	killall UDPEchoServer
+	./BroadcastReceiver 8888 &
+	./BroadcastSender localhost 8888 test
+	killall BroadcastReceiver
+	./MulticastReciver 8888 &
+	./MulticastSender localhost 8888 test
+	killall MulticastReceiver
