@@ -6,5 +6,7 @@ The Practical Sockets Library
 From http://cs.ecs.baylor.edu/~donahoo/practical/CSockets/practical/ <br />
 Originally by Michael J. Donahoo and Kenneth L. Calvert
 
-To generate configure script just type 
-	autoreconf
+To install just type:
+	./configure
+	make
+	make install
