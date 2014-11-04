@@ -4,8 +4,8 @@
 AC_PREREQ([2.69])
 AC_INIT([Practical Sockets], [1.0], [tookmund@gmail.com])
 AM_INIT_AUTOMAKE
-AC_CONFIG_SRCDIR([PracticalSocket.cpp])
-AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_SRCDIR([PracticalSockets.cpp])
+#AC_CONFIG_HEADERS([config.h])
 LT_INIT
 
 # Checks for programs.
