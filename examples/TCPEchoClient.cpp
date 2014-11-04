@@ -20,6 +20,7 @@
 #include <PracticalSockets.h>  // For Socket and SocketException
 #include <iostream>           // For cerr and cout
 #include <cstdlib>            // For atoi()
+#include <cstring>
 
 using namespace std;
 

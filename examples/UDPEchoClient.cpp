@@ -20,6 +20,7 @@
 #include <PracticalSockets.h>      // For UDPSocket and SocketException
 #include <iostream>               // For cout and cerr
 #include <cstdlib>                // For atoi()
+#include <cstring>
 
 using namespace std;
 
