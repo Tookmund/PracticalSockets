@@ -18,7 +18,8 @@
 #
 
 CXX = g++
-CXXFLAGS = -Wall -ansi -pedantic -g
+CXXFLAGS = -Wall -ansi -pedantic -g 
+LIB = -lPracticalSockets
 
 ifeq ($(shell uname),SunOS)
   LIBS = -lsocket -lnsl
@@ -28,31 +29,31 @@ all: TCPEchoClient TCPEchoServer UDPEchoClient UDPEchoServer TCPEchoServer-Threa
 BroadcastSender BroadcastReceiver MulticastSender MulticastReceiver
 
 TCPEchoClient: TCPEchoClient.cpp  
-	$(CXX) $(CXXFLAGS) -o TCPEchoClient TCPEchoClient.cpp  
+	$(CXX) $(CXXFLAGS) -o TCPEchoClient TCPEchoClient.cpp  $(LIB) $(LIBS)
 
 TCPEchoServer: TCPEchoServer.cpp  
-	$(CXX) $(CXXFLAGS) -o TCPEchoServer TCPEchoServer.cpp  
+	$(CXX) $(CXXFLAGS) -o TCPEchoServer TCPEchoServer.cpp  $(LIB) $(LIBS)
 
 UDPEchoClient: UDPEchoClient.cpp  
-	$(CXX) $(CXXFLAGS) -o UDPEchoClient UDPEchoClient.cpp  
+	$(CXX) $(CXXFLAGS) -o UDPEchoClient UDPEchoClient.cpp  $(LIB) $(LIBS)
 
 UDPEchoServer: UDPEchoServer.cpp  
-	$(CXX) $(CXXFLAGS) -o UDPEchoServer UDPEchoServer.cpp  
+	$(CXX) $(CXXFLAGS) -o UDPEchoServer UDPEchoServer.cpp  $(LIB) $(LIBS)
 
 TCPEchoServer-Thread: TCPEchoServer-Thread.cpp  
-	$(CXX) -D_GNU_SOURCE -o TCPEchoServer-Thread TCPEchoServer-Thread.cpp   -lpthread
+	$(CXX) -D_GNU_SOURCE -o TCPEchoServer-Thread TCPEchoServer-Thread.cpp   -lpthread $(LIB) $(LIBS)
 
 BroadcastSender: BroadcastSender.cpp  
-	$(CXX) $(CXXFLAGS) -o BroadcastSender BroadcastSender.cpp  
+	$(CXX) $(CXXFLAGS) -o BroadcastSender BroadcastSender.cpp  $(LIB) $(LIBS)
 
 BroadcastReceiver: BroadcastReceiver.cpp  
-	$(CXX) $(CXXFLAGS) -o BroadcastReceiver BroadcastReceiver.cpp  
+	$(CXX) $(CXXFLAGS) -o BroadcastReceiver BroadcastReceiver.cpp  $(LIB) $(LIBS)
 
 MulticastSender: MulticastSender.cpp  
-	$(CXX) $(CXXFLAGS) -o MulticastSender MulticastSender.cpp  
+	$(CXX) $(CXXFLAGS) -o MulticastSender MulticastSender.cpp  $(LIB) $(LIBS)
 
 MulticastReceiver: MulticastReceiver.cpp  
-	$(CXX) $(CXXFLAGS) -o MulticastReceiver MulticastReceiver.cpp  
+	$(CXX) $(CXXFLAGS) -o MulticastReceiver MulticastReceiver.cpp  $(LIB) $(LIBS)
 
 clean:
 	$(RM) TCPEchoClient TCPEchoServer UDPEchoClient UDPEchoServer TCPEchoServer-Thread \
