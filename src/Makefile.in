@@ -128,6 +128,10 @@ AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
+libPracticalSockets_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
+	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
+	$(AM_CXXFLAGS) $(CXXFLAGS) $(libPracticalSockets_la_LDFLAGS) \
+	$(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -312,7 +316,8 @@ top_srcdir = @top_srcdir@
 ACLOCAL_AMFLAGS = -I m4
 lib_LTLIBRARIES = libPracticalSockets.la
 libPracticalSockets_la_SOURCES = PracticalSockets.cpp
-include_HEADERS = PracticalSockets.cpp
+include_HEADERS = PracticalSockets.h
+libPracticalSockets_la_LDFLAGS = -version-info 1:0:0
 all: all-am
 
 .SUFFIXES:
@@ -384,7 +389,7 @@ clean-libLTLIBRARIES:
 	}
 
 libPracticalSockets.la: $(libPracticalSockets_la_OBJECTS) $(libPracticalSockets_la_DEPENDENCIES) $(EXTRA_libPracticalSockets_la_DEPENDENCIES) 
-	$(AM_V_CXXLD)$(CXXLINK) -rpath $(libdir) $(libPracticalSockets_la_OBJECTS) $(libPracticalSockets_la_LIBADD) $(LIBS)
+	$(AM_V_CXXLD)$(libPracticalSockets_la_LINK) -rpath $(libdir) $(libPracticalSockets_la_OBJECTS) $(libPracticalSockets_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
