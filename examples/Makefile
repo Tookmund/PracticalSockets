@@ -60,14 +60,18 @@ clean:
         BroadcastSender BroadcastReceiver MulticastSender MulticastReceiver
 test: all
 	./TCPEchoServer 8888 &
+	sleep 1
 	./TCPEchoClient localhost test 8888
 	killall TCPEchoServer
 	./UDPEchoServer 8888 &
+	sleep 1
 	./UDPEchoClient localhost test 8888
 	killall UDPEchoServer
 	./BroadcastReceiver 8888 &
+	sleep 1
 	./BroadcastSender localhost 8888 test
 	killall BroadcastReceiver
 	./MulticastReciver 8888 &
+	sleep 1
 	./MulticastSender localhost 8888 test
 	killall MulticastReceiver
