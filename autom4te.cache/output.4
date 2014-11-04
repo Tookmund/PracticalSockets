@@ -595,7 +595,7 @@ PACKAGE_STRING='Practical Sockets 1.0'
 PACKAGE_BUGREPORT='tookmund@gmail.com'
 PACKAGE_URL=''
 
-ac_unique_file="PracticalSockets.cpp"
+ac_unique_file="src"
 # Factoring default headers for most tests.
 ac_includes_default="\
 #include <stdio.h>
@@ -16212,7 +16212,7 @@ fi
 done
 
 
-ac_config_files="$ac_config_files Makefile"
+ac_config_files="$ac_config_files Makefile src/Makefile"
 
 
 cat >confcache <<\_ACEOF
@@ -17342,6 +17342,7 @@ do
     "depfiles") CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
     "libtool") CONFIG_COMMANDS="$CONFIG_COMMANDS libtool" ;;
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
+    "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
 
   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
   esac

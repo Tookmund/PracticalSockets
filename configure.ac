@@ -4,7 +4,7 @@
 AC_PREREQ([2.69])
 AC_INIT([Practical Sockets], [1.0], [tookmund@gmail.com])
 AM_INIT_AUTOMAKE
-AC_CONFIG_SRCDIR([PracticalSockets.cpp])
+AC_CONFIG_SRCDIR([src])
 #AC_CONFIG_HEADERS([config.h])
 LT_INIT
 
@@ -27,6 +27,6 @@ AC_CHECK_HEADER_STDBOOL
 # Checks for library functions.
 AC_CHECK_FUNCS([gethostbyname inet_ntoa memset socket strerror])
 
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile src/Makefile])
 AC_CONFIG_MACRO_DIR([m4])
 AC_OUTPUT
