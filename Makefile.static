@@ -19,6 +19,9 @@
 # and
 # http://www.cprogramming.com/tutorial/shared-libraries-linux-gcc.html
 
+# DO NOT USE THIS!
+# IT IS HERE FOR BACKUP IN CASE AUTOTOOLS FAIL!
+
 FILE = PracticalSocket
 CPP = g++
 FLAGS = -fpic -c
