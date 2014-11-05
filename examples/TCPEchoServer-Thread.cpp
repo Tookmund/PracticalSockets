@@ -21,7 +21,6 @@
 #include <iostream>           // For cout, cerr
 #include <cstdlib>            // For atoi()  
 #include <pthread.h>          // For POSIX threads  
-#include <cstring>
 
 const int RCVBUFSIZE = 32;
 
