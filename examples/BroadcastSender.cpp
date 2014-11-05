@@ -20,7 +20,6 @@
 #include <PracticalSockets.h>  // For UDPSocket and SocketException
 #include <iostream>           // For cout and cerr
 #include <cstdlib>            // For atoi()
-#include <cstring>
 
 #ifdef WIN32
 #include <windows.h>          // For ::Sleep()
@@ -45,8 +44,9 @@ int main(int argc, char *argv[]) {
   try {
     UDPSocket sock;
   
-    // Repeatedly send the string (not including \0) to the server
-    for (;;) {
+    // Repeatedly send the string (not including \0) to the server (3 times)
+    int i;
+    for (i = 0;i < 3; i++) {
       sock.sendTo(sendString, strlen(sendString), destAddress, destPort);
       sleep(3);
     }
