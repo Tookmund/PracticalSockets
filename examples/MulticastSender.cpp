@@ -53,8 +53,9 @@ int main(int argc, char *argv[]) {
 
     sock.setMulticastTTL(multicastTTL);
 
-    // Repeatedly send the string to the server
-    for (;;) {
+    // Repeatedly send the string to the server (3 times)
+    int i;
+    for (i = 0; i < 3; ++i) {
       sock.sendTo(sendString, strlen(sendString), servAddress, port);
       sleep(3);
     }
